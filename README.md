@@ -39,9 +39,25 @@ scroll.addChild(circle)
 
 - This does not clip children
 
-# VERSION + BY JCK
+# VERSION + BY JCK:
+
 * adds option to change scroll_bar_size
-* adds option to choose vertical or horizontal orientation
-* adds touch control (drag content to scroll, also works with mouse)
+
+* adds option to choose vertical or horizontal orientation : "vertical", "horizontal" or "none" (none remove scrollbars, useful if your content is smaller than the bounds box)
+
+* adds touch control (drag content pane to scroll, also works with mouse)
+
 * dissociates mouse-wheel control in case of several scoll-container on the same page
+
 * adds 'is_moving' public property to know if the user is sliding a pane (useful to avoid clicking on elements from a pane that contains interactive elements when scrolling it)
+
+Snippets:
+```js
+var scroll = new createjs.ScrollContainer(canvas, {scroll_bar_size:10, orientation:"vertical"})
+```
+
+```js
+if (scroll.is_moving){
+    console.log("Some punk is sliding the pane right now");
+}
+```
